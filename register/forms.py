@@ -44,7 +44,9 @@ class RequestActivationForm(forms.Form):
 
     def send_mail(self, tenant_id):
         data = self.cleaned_data
-        url = "%s?token=%s" % ("http://www.google.com/", tenant_id)
+        url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
+                                        reverse_lazy("activate"),
+                                        tenant_id)
         msg = """
             Please follow the link below to activate your account.<br />
             <a href='%s'>%s</a>
@@ -107,10 +109,14 @@ class RegistrationForm(forms.Form):
                                   tenant_id=tenant.id,
                                   enabled=False)
         if user:
+            url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
+                                            reverse_lazy("activate"),
+                                            tenant.id)
             msg = """
             Please follow the link below to activate your account.<br />
-            <a href='#'>%s</a>
-            """ % "http://google.com"
+            <a href='%s'>%s</a>
+            """ % (url,
+                   url)
             mail = Mailer(subject="Activate",
                           message=msg,
                           fr=self.get_default_mail(),

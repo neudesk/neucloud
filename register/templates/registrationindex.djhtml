@@ -17,7 +17,10 @@
         </fieldset>
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary pull-right">Register</button>
+        <span>
+          <a href="{% url 'splash' %}">Login</a> | <a href="{% url 'request_activation' %}">Resend Activation</a>
+        </span>
+        <button type="submit" class="btn btn-primary pull-right">{{ action }}</button>
     </div>
 </form>
 {% endblock %}

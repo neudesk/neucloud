@@ -29,5 +29,8 @@
 {% endblock %}
 
 {% block modal-footer %}
+  <span>
+    <a href="{% url 'register' %}">Register</a> | <a href="{% url 'request_activation' %}">Resend Activation</a>
+  </span>
   <button type="submit" class="btn btn-primary pull-right">{% trans "Sign In" %}</button>
 {% endblock %}

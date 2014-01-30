@@ -1,0 +1,10 @@
+{% extends "register.html" %}
+
+{% block content %}
+<p style="padding: 20px">
+    {{ result|safe|capfirst }}
+</p>
+<div class="modal-footer">
+    <a href="{% url 'splash' %}">Log In</a> | <a href="{% url 'register' %}">Register</a>
+</div>
+{% endblock %}

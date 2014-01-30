@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84c6a67-84bb-4a3e-8ef0-0639fe1df095" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/register/api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/register/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mailer/templates/htmlmail.djhtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/horizon/templates/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/register/templates/registrationindex.djhtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/register/templates/requestactivation.djhtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mailer/templates/textmail.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/register/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openstack_dashboard/settings.py" afterPath="$PROJECT_DIR$/openstack_dashboard/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openstack_dashboard/urls.py" afterPath="$PROJECT_DIR$/openstack_dashboard/urls.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/register/templates/requestactivation.djhtml" afterPath="$PROJECT_DIR$/register/templates/activate.djhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/horizon/templates/auth/_login.html" afterPath="$PROJECT_DIR$/horizon/templates/auth/_login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/api.py" afterPath="$PROJECT_DIR$/register/api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/forms.py" afterPath="$PROJECT_DIR$/register/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/templates/registrationindex.djhtml" afterPath="$PROJECT_DIR$/register/templates/registrationindex.djhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/horizon/templates/splash.html" afterPath="$PROJECT_DIR$/horizon/templates/splash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/urls.py" afterPath="$PROJECT_DIR$/register/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/views.py" afterPath="$PROJECT_DIR$/register/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="horizon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +36,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/register/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.69405097" vertical-offset="439" max-vertical-offset="792">
+            <state line="82" column="24" selection-start="2917" selection-end="2917" vertical-scroll-proportion="0.62237763" vertical-offset="1209" max-vertical-offset="1854">
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -45,11 +44,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requestactivation.djhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/templates/requestactivation.djhtml">
+      <file leaf-file-name="activate.djhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register/templates/activate.djhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="19" selection-start="50" selection-end="50" vertical-scroll-proportion="-0.8888889" vertical-offset="12" max-vertical-offset="504">
-              <folding />
+            <state line="3" column="25" selection-start="76" selection-end="76" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="270">
+              <folding>
+                <element signature="e#54#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register/api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="612">
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,7 +69,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/register/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="87" selection-start="222" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
+            <state line="5" column="87" selection-start="222" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -76,19 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registrationindex.djhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/templates/registrationindex.djhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="63" selection-start="482" selection-end="482" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="504">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/register/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="41" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="2322">
+            <state line="109" column="48" selection-start="3671" selection-end="3671" vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2430">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -96,10 +99,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="registrationindex.djhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register/templates/registrationindex.djhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="44" selection-start="692" selection-end="692" vertical-scroll-proportion="-11.037037" vertical-offset="62" max-vertical-offset="558">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="local_settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openstack_dashboard/local/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="12" selection-start="5160" selection-end="5172" vertical-scroll-proportion="0.0" vertical-offset="2052" max-vertical-offset="8622">
+            <state line="128" column="14" selection-start="4934" selection-end="4948" vertical-scroll-proportion="0.0" vertical-offset="2003" max-vertical-offset="8622">
               <folding />
             </state>
           </provider>
@@ -123,25 +135,27 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/openstack_dashboard/views.py" />
-        <option value="$PROJECT_DIR$/openstack_dashboard/urls.py" />
-        <option value="$PROJECT_DIR$/register/api.py" />
         <option value="$PROJECT_DIR$/horizon/templates/register.html" />
         <option value="$PROJECT_DIR$/openstack_dashboard/settings.py" />
         <option value="$PROJECT_DIR$/mailer/templates/htmlmail.djhtml" />
         <option value="$PROJECT_DIR$/mailer/templates/textmail.txt" />
         <option value="$PROJECT_DIR$/openstack_dashboard/local/local_settings.py" />
         <option value="$PROJECT_DIR$/mailer/views.py" />
-        <option value="$PROJECT_DIR$/register/templates/registrationindex.djhtml" />
         <option value="$PROJECT_DIR$/register/urls.py" />
+        <option value="$PROJECT_DIR$/register/templates/_formtemplate.djhtml" />
         <option value="$PROJECT_DIR$/register/templates/requestactivation.djhtml" />
+        <option value="$PROJECT_DIR$/register/api.py" />
+        <option value="$PROJECT_DIR$/register/templates/activate.djhtml" />
         <option value="$PROJECT_DIR$/register/forms.py" />
+        <option value="$PROJECT_DIR$/horizon/templates/auth/_login.html" />
+        <option value="$PROJECT_DIR$/register/templates/registrationindex.djhtml" />
+        <option value="$PROJECT_DIR$/horizon/templates/splash.html" />
         <option value="$PROJECT_DIR$/register/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1431" />
+    <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="1301" />
     <option name="height" value="744" />
@@ -215,6 +229,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -478,15 +524,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1431" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25737053" sideWeight="0.6704" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25737053" sideWeight="0.792" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -514,41 +560,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/register/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="49" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.78061223" vertical-offset="108" max-vertical-offset="594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/horizon/templates/horizon/_messages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/horizon/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="48" selection-start="864" selection-end="902" vertical-scroll-proportion="1.0175953" vertical-offset="85" max-vertical-offset="792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/horizon/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="42" selection-start="363" selection-end="363" vertical-scroll-proportion="0.32876712" vertical-offset="78" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/horizon/templates/horizon/_subnav_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="392">
@@ -577,36 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openstack_dashboard/local/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="12" selection-start="5160" selection-end="5172" vertical-scroll-proportion="0.0" vertical-offset="2052" max-vertical-offset="8622">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/templates/registrationindex.djhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="63" selection-start="482" selection-end="482" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="41" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="2322">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/templates/requestactivation.djhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="50" selection-end="50" vertical-scroll-proportion="-0.8888889" vertical-offset="12" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mailer/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
@@ -616,18 +597,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/openstack_dashboard/local/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="14" selection-start="4934" selection-end="4948" vertical-scroll-proportion="0.0" vertical-offset="2003" max-vertical-offset="8622">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/horizon/templates/auth/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/horizon/templates/auth/_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="5" selection-start="1292" selection-end="1421" vertical-scroll-proportion="0.64179105" vertical-offset="300" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/horizon/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="4" selection-start="325" selection-end="363" vertical-scroll-proportion="0.47710842" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/horizon/templates/splash.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="7" selection-start="479" selection-end="479" vertical-scroll-proportion="0.7373494" vertical-offset="0" max-vertical-offset="432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/register/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="87" selection-start="222" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
+        <state line="5" column="87" selection-start="222" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/register/templates/activate.djhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="76" selection-end="76" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="270">
+          <folding>
+            <element signature="e#54#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="48" selection-start="3671" selection-end="3671" vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2430">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/templates/registrationindex.djhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="44" selection-start="692" selection-end="692" vertical-scroll-proportion="-11.037037" vertical-offset="62" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="612">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/register/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.69405097" vertical-offset="439" max-vertical-offset="792">
+        <state line="82" column="24" selection-start="2917" selection-end="2917" vertical-scroll-proportion="0.62237763" vertical-offset="1209" max-vertical-offset="1854">
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
