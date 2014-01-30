@@ -1,0 +1,24 @@
+{% load i18n branding %}
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{% trans "Registration" %} - {% site_branding %}</title>
+    {% include "_stylesheets.html" %}
+  </head>
+  <body id="splash">
+    <div class="container">
+    {% include "horizon/_messages.html" %}
+      <div class="row large-rounded">
+          <div id="" class="login ">
+            <div class="modal-header">
+                <h3>{{ pagedesc }}</h3>
+            </div>
+            {% block content %}
+            {% endblock %}
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "register.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="modal-body clearfix">
+        <fieldset>
+            {% for f in form %}
+            <div class="control-group form-field clearfix {% if f.errors %}error{% endif %}">
+                <label for="id_password">{{ f.label|title }}</label>
+                <div class="input">
+                    {{ f }}
+                    {% if f.errors %}<span class="">{{ f.errors }}</span>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary pull-right">Request</button>
+    </div>
+</form>
+{% endblock %}

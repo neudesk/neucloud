@@ -1,0 +1,9 @@
+Greetings, \n\n\n
+
+{{ message }}\n\n\n
+
+\n\n\n\n
+neucloud\n
+Office: -\n
+Support: 20thstchurchofchrist@gmail.com\n
+

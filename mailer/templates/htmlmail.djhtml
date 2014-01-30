@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    </head>
+    <body>
+        <div style="padding: 20px;">
+            <h4>Greetings,</h4>
+
+            <p>
+                {{ message|safe }}
+            </p>
+
+            <p style="background: #F6F6F6; padding: 10px;">
+                <h4>neucloud</h4>
+                <ul style="list-style-type: none;">
+                    <li><span>Office: </span> -</li>
+                    <li><span>Support: </span> support@neucloud.com</li>
+                </ul>
+            </p>
+        </div>
+    </body>
+</html>
