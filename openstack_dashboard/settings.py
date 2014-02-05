@@ -160,6 +160,9 @@ INSTALLED_APPS = [
     'openstack_dashboard.dashboards.settings',
     'openstack_auth',
     'openstack_dashboard.dashboards.router',
+    'django_extensions',
+    'activetoken',
+    'south',
     'register',
     'mailer',
 ]

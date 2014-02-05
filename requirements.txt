@@ -21,3 +21,6 @@ pytz>=2010h
 # Horizon Utility Requirements
 # for SECURE_KEY generation
 lockfile>=0.8
+dj-database-url
+django-extensions
+mysql-python

@@ -6,18 +6,117 @@ from django.utils.html import mark_safe
 from mailer.views import Mailer
 from .api import KeystoneCli
 
+from activetoken.models import Token
+
 LOG = logging.getLogger(__name__)
 
-class RequestActivationForm(forms.Form):
+
+class UtilsMixin(object):
+
+    def cli(self):
+        cli = KeystoneCli()
+        return cli
+
+    def create_token(self, value):
+        token = Token(value=value)
+        token.save()
+        return token.token
+
+    def build_url(self, unreverse_url=None, token=None):
+        url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
+                                        reverse_lazy(unreverse_url),
+                                        token)
+        return url
+
+    def get_default_mail(self):
+        return settings.DEFAULT_MAIL
+
+    def send_mail(self, subject, msg, to):
+        mail = Mailer(subject=subject,
+                      message=msg,
+                      fr=self.get_default_mail(),
+                      recipients=[to])
+        return mail.send()
+
+class ChangePassword(forms.Form, UtilsMixin):
+
+    password = forms.CharField(max_length=30, widget=forms.PasswordInput())
+    confirm_password = forms.CharField(max_length=30, widget=forms.PasswordInput())
+
+    def clean_confirm_password(self):
+        data = self.cleaned_data
+        p1 = data.get('password')
+        p2 = data.get('confirm_password')
+        if p1 != p2:
+            raise forms.ValidationError("Password did not match!")
+        return p2
+
+    def change_password(self, user):
+        cli = self.cli()
+        cli.client.users.update_password(user,
+                                         self.cleaned_data.get('password'))
+        to = user.email
+        subject = "Password Changed"
+        url = self.build_url(unreverse_url="splash")
+        msg = """
+        Congratulation, you password has been successfully changed.<br />
+        Please try to sign in here: %s
+        """ % url
+        self.send_mail(subject, msg, to)
+
+class RequestForgotPassword(forms.Form, UtilsMixin):
+    email = forms.EmailField()
+
+    def get_user(self):
+        cli = self.cli()
+        users = cli.client.users.list()
+        return users
+
+    def clean_email(self):
+        data = self.cleaned_data
+        exists = False
+        for u in self.get_user():
+            if u.email == data['email']:
+                exists = True
+        if not exists:
+            msg = """
+            This email address is not registered yet.<br />
+            Please click <a href='%s'>here</a> to register.
+            """ % reverse_lazy("register")
+            raise forms.ValidationError(mark_safe(msg))
+        return data['email']
+
+    def get_user_id(self):
+        email = self.cleaned_data.get('email')
+        cli = self.cli()
+        users = cli.client.users.list()
+        for u in users:
+            if u.email == email:
+                return u.id
+
+    def forgot_pass(self):
+        value = self.get_user_id()
+        token = self.create_token(value)
+        if token:
+            to = self.cleaned_data.get('email')
+            subj = "Reset Password"
+            url = self.build_url(unreverse_url="change_password",
+                                 token=token)
+            msg = """
+            Please follow the link below to update your password.<br />
+            <a href='%s'>%s</a>
+            """ % (url,
+                   url)
+            self.send_mail(subj, msg, to)
+
+
+class RequestActivationForm(forms.Form, UtilsMixin):
 
     email = forms.EmailField()
 
-    def __init__(self, *args, **kwargs):
-        super(RequestActivationForm, self).__init__(*args, **kwargs)
-        self.cli = KeystoneCli()
-
     def get_user(self):
-        users = self.cli.client.users.list()
+        cli = self.cli()
+        users = cli.client.users.list()
         return users
 
     def clean_email(self):
@@ -39,14 +138,11 @@ class RequestActivationForm(forms.Form):
             if email == u.email:
                 return u.tenantId
 
-    def get_default_mail(self):
-        return settings.DEFAULT_MAIL
-
     def send_mail(self, tenant_id):
         data = self.cleaned_data
         url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
                                         reverse_lazy("activate"),
-                                        tenant_id)
+                                        self.create_token(tenant_id))
         msg = """
             Please follow the link below to activate your account.<br />
             <a href='%s'>%s</a>
@@ -64,7 +160,7 @@ class RequestActivationForm(forms.Form):
         self.send_mail(tenant_id)
 
 
-class RegistrationForm(forms.Form):
+class RegistrationForm(forms.Form, UtilsMixin):
 
     email = forms.EmailField()
     password = forms.CharField(max_length=30, widget=forms.PasswordInput())
@@ -95,8 +191,6 @@ class RegistrationForm(forms.Form):
         email = self.cleaned_data['email']
         return email
 
-    def get_default_mail(self):
-        return settings.DEFAULT_MAIL
 
     def register(self):
         data = self.cleaned_data
@@ -107,11 +201,11 @@ class RegistrationForm(forms.Form):
                                   password=data.get("password"),
                                   email=data.get("email"),
                                   tenant_id=tenant.id,
-                                  enabled=False)
+                                  enabled=True)
         if user:
             url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
                                             reverse_lazy("activate"),
-                                            tenant.id)
+                                            self.create_token(tenant.id))
             msg = """
             Please follow the link below to activate your account.<br />
             <a href='%s'>%s</a>
