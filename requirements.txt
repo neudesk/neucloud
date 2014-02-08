@@ -23,4 +23,3 @@ pytz>=2010h
 lockfile>=0.8
 dj-database-url
 django-extensions
-mysql-python
