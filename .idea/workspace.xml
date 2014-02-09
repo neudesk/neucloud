@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e84c6a67-84bb-4a3e-8ef0-0639fe1df095" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/forms.py" afterPath="$PROJECT_DIR$/register/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openstack_dashboard/settings.py" afterPath="$PROJECT_DIR$/openstack_dashboard/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="horizon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,10 +37,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="local_settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openstack_dashboard/local/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="23" selection-start="2162" selection-end="2162" vertical-scroll-proportion="0.8585366" vertical-offset="548" max-vertical-offset="8712">
+            <state line="50" column="0" selection-start="1931" selection-end="1951" vertical-scroll-proportion="-29.333334" vertical-offset="0" max-vertical-offset="8712">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/openstack_dashboard/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="142" column="24" selection-start="4695" selection-end="4695" vertical-scroll-proportion="0.46341464" vertical-offset="2240" max-vertical-offset="4680">
               <folding />
             </state>
           </provider>
@@ -80,8 +87,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/openstack_dashboard/urls.py" />
         <option value="$PROJECT_DIR$/register/forms.py" />
-        <option value="$PROJECT_DIR$/openstack_dashboard/settings.py" />
         <option value="$PROJECT_DIR$/openstack_dashboard/local/local_settings.py" />
+        <option value="$PROJECT_DIR$/openstack_dashboard/settings.py" />
       </list>
     </option>
   </component>
@@ -146,6 +153,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="openstack_dashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -164,7 +185,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="local" />
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openstack_dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api_tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -459,18 +502,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test-requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="11" selection-start="293" selection-end="293" vertical-scroll-proportion="0.6590389" vertical-offset="0" max-vertical-offset="437" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="45" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/openstack_dashboard/local/.secret_key_store">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437" />
@@ -526,13 +557,6 @@
         <state line="18" column="8" selection-start="288" selection-end="288" vertical-scroll-proportion="0.37931034" vertical-offset="159" max-vertical-offset="594" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openstack_dashboard/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.5881007" vertical-offset="499" max-vertical-offset="4680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="202" column="27" selection-start="6661" selection-end="6661" vertical-scroll-proportion="0.0" vertical-offset="3325" max-vertical-offset="3978">
@@ -540,9 +564,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/register/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="154" selection-end="155" vertical-scroll-proportion="0.13602015" vertical-offset="0" max-vertical-offset="3222">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/openstack_dashboard/local/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="23" selection-start="2162" selection-end="2162" vertical-scroll-proportion="0.8585366" vertical-offset="548" max-vertical-offset="8712">
+        <state line="50" column="0" selection-start="1931" selection-end="1951" vertical-scroll-proportion="-29.333334" vertical-offset="0" max-vertical-offset="8712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openstack_dashboard/test/api_tests/base_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.49427918" vertical-offset="216" max-vertical-offset="3888">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openstack_dashboard/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="24" selection-start="4695" selection-end="4695" vertical-scroll-proportion="0.46341464" vertical-offset="2240" max-vertical-offset="4680">
           <folding />
         </state>
       </provider>
