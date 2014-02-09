@@ -40,8 +40,8 @@ class UtilsMixin(object):
 
 class ChangePassword(forms.Form, UtilsMixin):
 
-    password = forms.CharField(max_length=30, widget=forms.PasswordInput())
-    confirm_password = forms.CharField(max_length=30, widget=forms.PasswordInput())
+    password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
+    confirm_password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
 
     def clean_confirm_password(self):
         data = self.cleaned_data
@@ -163,8 +163,8 @@ class RequestActivationForm(forms.Form, UtilsMixin):
 class RegistrationForm(forms.Form, UtilsMixin):
 
     email = forms.EmailField()
-    password = forms.CharField(max_length=30, widget=forms.PasswordInput())
-    confirm_password = forms.CharField(max_length=30, widget=forms.PasswordInput())
+    password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
+    confirm_password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
