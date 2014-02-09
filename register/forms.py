@@ -23,7 +23,7 @@ class UtilsMixin(object):
         return token.token
 
     def build_url(self, unreverse_url=None, token=None):
-        url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
+        url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_APP_HOST', None),
                                         reverse_lazy(unreverse_url),
                                         token)
         return url
@@ -140,7 +140,7 @@ class RequestActivationForm(forms.Form, UtilsMixin):
 
     def send_mail(self, tenant_id):
         data = self.cleaned_data
-        url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
+        url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_APP_HOST', None),
                                         reverse_lazy("activate"),
                                         self.create_token(tenant_id))
         msg = """
@@ -203,7 +203,7 @@ class RegistrationForm(forms.Form, UtilsMixin):
                                   tenant_id=tenant.id,
                                   enabled=True)
         if user:
-            url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_HOST', None),
+            url = "http://%s%s?token=%s" % (getattr(settings, 'OPENSTACK_APP_HOST', None),
                                             reverse_lazy("activate"),
                                             self.create_token(tenant.id))
             msg = """
