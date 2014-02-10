@@ -30,13 +30,21 @@ from openstack_dashboard import api
 
 
 class PasswordForm(forms.SelfHandlingForm):
+    password_regex = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+    regex_error = """
+    Must contains one lowercase and uppercase characters,
+    must contains one special symbols in the list '@#$%'
+    """
     current_password = forms.CharField(label=_("Current password"),
                            widget=forms.PasswordInput(render_value=False))
-    new_password = forms.RegexField(label=_("New password"),
-               widget=forms.PasswordInput(render_value=False),
-               regex=validators.password_validator(),
-               error_messages={'invalid':
-               validators.password_validator_msg()})
+    new_password = forms.RegexField(password_regex, max_length=30, min_length=8,
+                                widget=forms.PasswordInput(),
+                                error_message=regex_error)
+    # new_password = forms.RegexField(label=_("New password"),
+    #            widget=forms.PasswordInput(render_value=False),
+    #            regex=validators.password_validator(),
+    #            error_messages={'invalid':
+    #            validators.password_validator_msg()})
     confirm_password = forms.CharField(label=_("Confirm new password"),
                             widget=forms.PasswordInput(render_value=False))
 
