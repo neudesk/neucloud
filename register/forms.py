@@ -2,6 +2,7 @@ import logging
 from django import forms
 from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
+from django.utils.translation import ugettext_lazy as _
 from django.utils.html import mark_safe
 from mailer.views import Mailer
 from .api import KeystoneCli
@@ -39,8 +40,14 @@ class UtilsMixin(object):
         return mail.send()
 
 class ChangePassword(forms.Form, UtilsMixin):
-
-    password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
+    password_regex = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+    regex_error = """
+    Must contains one lowercase and uppercase characters,
+    must contains one special symbols in the list '@#$%'
+    """
+    password = forms.RegexField(password_regex, max_length=30, min_length=8,
+                                widget=forms.PasswordInput(),
+                                error_message=regex_error)
     confirm_password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
 
     def clean_confirm_password(self):
@@ -162,8 +169,16 @@ class RequestActivationForm(forms.Form, UtilsMixin):
 
 class RegistrationForm(forms.Form, UtilsMixin):
 
+    password_regex = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+    regex_error = """
+    Must contains one lowercase and uppercase characters,
+    must contains one special symbols in the list '@#$%'
+    """
     email = forms.EmailField()
-    password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
+    password = forms.RegexField(password_regex, max_length=30, min_length=8,
+                                widget=forms.PasswordInput(),
+                                error_message=regex_error)
+    # password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput(), regex=password_regex)
     confirm_password = forms.CharField(max_length=30, min_length=8, widget=forms.PasswordInput())
 
     def __init__(self, *args, **kwargs):
