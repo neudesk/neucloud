@@ -66,8 +66,8 @@ class ChangePassword(forms.Form, UtilsMixin):
         subject = "Password Changed"
         url = self.build_url(unreverse_url="splash")
         msg = """
-        Congratulation, you password has been successfully changed.<br />
-        Please try to sign in here: %s
+        You password has been changed successfully.<br />
+        You may <a href='%s'>sign in here</a>.
         """ % url
         self.send_mail(subject, msg, to)
 
@@ -87,8 +87,8 @@ class RequestForgotPassword(forms.Form, UtilsMixin):
                 exists = True
         if not exists:
             msg = """
-            This email address is not registered yet.<br />
-            Please click <a href='%s'>here</a> to register.
+            This email address is not a registered account.<br />
+            Please <a href='%s'>click here to join</a>.
             """ % reverse_lazy("register")
             raise forms.ValidationError(mark_safe(msg))
         return data['email']
@@ -134,8 +134,8 @@ class RequestActivationForm(forms.Form, UtilsMixin):
                 exists = True
         if not exists:
             msg = """
-            This email address is not registered yet.<br />
-            Please click <a href='%s'>here</a> to register.
+            This email address is not a registered account.<br />
+            Please <a href='%s'>click here to join</a>.
             """ % reverse_lazy("register")
             raise forms.ValidationError(mark_safe(msg))
         return data['email']
@@ -191,7 +191,7 @@ class RegistrationForm(forms.Form, UtilsMixin):
         p2 = data.get("confirm_password")
 
         if p1 and p1 != p2:
-            raise forms.ValidationError("Password did not match!")
+            raise forms.ValidationError("Password did not match")
         return p2
 
     def clean_email(self):

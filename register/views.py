@@ -20,7 +20,7 @@ class FormSubmissionMixin(FormView):
 class ForgotPasswordView(FormSubmissionMixin):
     form_class = RequestForgotPassword
     template_name = "registrationindex.djhtml"
-    pagedesc = "Change password request"
+    pagedesc = "Reset Password"
     success_url = reverse_lazy("splash")
     action = "Reset"
 
@@ -46,7 +46,7 @@ class ChangePasswordView(FormSubmissionMixin):
             return token_value.value
         except:
             msg = """
-            Invalid token, unable to to associate token to any user.<br />
+            There was an invalid token, unable to to associate token to any user.<br />
             Please click <a href='%s'>here</a> and try to reset your account again.
             """ % reverse_lazy("change_password_request")
             self.error = mark_safe(msg)
@@ -60,15 +60,18 @@ class ChangePasswordView(FormSubmissionMixin):
             return user
         else:
             msg = """
-            Invalid token, unable to to associate token to any user.<br />
+            There was an invalid token, unable to to associate token to any user.<br />
             Please click <a href='%s'>here</a> and try to reset your account again.
             """ % reverse_lazy("change_password_request")
             self.error = mark_safe(msg)
 
     def form_valid(self, form):
         form.change_password(self.get_user())
+        msg = """
+        Your password has been successfully changed. You may <a href='%s'>sign in here</a>.
+        """ % reverse_lazy('splash')
         messages.info(self.request,
-                      mark_safe("Your password is successfully changed.<br /> Please try to login."))
+                      mark_safe(msg))
         return super(ChangePasswordView, self).form_valid(form)
 
     def render_to_response(self, context, **response_kwargs):
@@ -88,8 +91,13 @@ class RegistrationView(FormSubmissionMixin):
 
     def form_valid(self, form):
         form.register()
-        msg = "Congratulations, You have successfully created an account, Please check your email to activate."
-        messages.info(self.request, msg)
+        msg = """
+        Congratulations, you have successfully created your account.
+        To activate it, please check your email and click the activation link in the email.
+        If you did not receive the email, please check your junk or spam folder.<br />
+        Back to <a href='%s'>Sign in</a>.
+        """ % reverse_lazy('splash')
+        messages.info(self.request, mark_safe(msg))
         return super(RegistrationView, self).form_valid(form)
 
 class RequestActivation(FormSubmissionMixin):
@@ -156,13 +164,14 @@ class ActivationView(TemplateView):
                     self.result = """
                     Congratulations,<br />
                     Your account is now activated.<br />
-                    You may now sign in here <a href='%s'>Sign in</a>
+                    You may <a href='%s'>Sign in here</a>
                     """ % reverse_lazy("splash")
                 else:
-                    self.result = """
-                    Your project and your account is already active,
-                    you don't need to reactivate.
-                    """
+                    msg = """
+                    Your account is already activated.
+                    Please <a href='%s'>sign in</a>.
+                    """ % reverse_lazy('splash')
+                    self.result = mark_safe(msg)
         result = self.result
         return result
 
