@@ -35,7 +35,7 @@ class ChangePasswordView(FormSubmissionMixin):
     template_name = "registrationindex.djhtml"
     pagedesc = "Update Password"
     success_url = reverse_lazy("splash")
-    action = "Change Password"
+    action = "Send"
     client = KeystoneCli()
     cli = client.client
     error = None
@@ -82,9 +82,9 @@ class ChangePasswordView(FormSubmissionMixin):
 class RegistrationView(FormSubmissionMixin):
     form_class = RegistrationForm
     template_name = "registrationindex.djhtml"
-    pagedesc = "Create Account"
+    pagedesc = "Create an Account"
     success_url = reverse_lazy("splash")
-    action = "Register"
+    action = "Join"
 
     def form_valid(self, form):
         form.register()

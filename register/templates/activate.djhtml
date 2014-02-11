@@ -5,6 +5,6 @@
     {{ result|safe|capfirst }}
 </p>
 <div class="modal-footer">
-    <a href="{% url 'splash' %}">Log In</a> | <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'splash' %}">Sign In</a> | <a href="{% url 'register' %}">Join</a>
 </div>
 {% endblock %}

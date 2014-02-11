@@ -18,7 +18,7 @@
     </div>
     <div class="modal-footer">
         <span>
-          <a href="{% url 'splash' %}">Login</a> | <a href="{% url 'request_activation' %}">Resend Activation</a>
+          <a href="{% url 'splash' %}">Sign In</a> | <a href="{% url 'request_activation' %}">Re-send Activation</a>
         </span>
         <button type="submit" class="btn btn-primary pull-right">{{ action }}</button>
     </div>
